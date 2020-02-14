@@ -1,0 +1,40 @@
+.content .loginform {
+    border-radius: 34px;
+    background-color: rgb(212, 97, 20);
+    padding: 5px;
+    margin-top: 5%;
+    margin-left: 30%;
+    justify-content: space-around;
+    height: 500px;
+    width: 500px;
+    color: black;
+}
+
+.content .loginform .input-field {
+    text-align: left;
+    width: 50%;
+    height: 4.5%;
+    background-color: rgb(212, 97, 20);
+    margin: 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+    color: #ffff;
+    border-radius: 4px;
+    text-shadow: rgb(212, 97, 20);
+    position: relative;
+}
+
+.content .loginform .submit-button {
+    border-radius: 48px;
+    width: 75px;
+    text-align: center;
+    height: 45px;
+    font-size: 100%;
+    border-color: azure;
+    border-width: 1px;
+    margin-top: 56px;
+    background-color: rgb(212, 97, 20);
+    opacity: 1;
+    color: black;
+    margin-left: 10%;
+}

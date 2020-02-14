@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {%block title%}
+    {%endblock%}
+
+    <style>
+        * {
+            text-transform: lowercase;
+            text-align: center;
+            font-family: cursive;
+            list-style: none;
+            border-radius: 4px;
+        }
+
+        hr {
+            opacity: .05;
+        }
+
+        /*navigation bar*/
+        .menus ul {
+            list-style-type: none;
+            margin: 0;
+            margin-right: 5px;
+            margin-top: 15px;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(238, 103, 13);
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .accounts {
+
+            float: right;
+        }
+
+
+
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: #111;
+        }
+
+        li.dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /*user account info*/
+        .accountinfo {
+            background-color: aliceblue;
+            display: flex;
+        }
+
+        .accountinfo .avatar {
+            float: left;
+            margin-left: 6%;
+            margin-right: 54%;
+        }
+
+
+
+        /*body */
+        .dom {
+            list-style-type: none;
+            margin-top: .5%;
+            width: 100%;
+            align-content: center;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            display: flex;
+
+        }
+
+        /*individual sections*/
+        /*messages sections*/
+        .dom .messages {
+            width: 25%;
+            margin: 5px;
+            font-size: small;
+            overflow: hidden;
+
+            display: inline-block;
+        }
+
+        .dom .messages .title {
+            width: 50%;
+            text-align: left !important;
+            margin: 2px;
+
+        }
+
+        .dom .messages .title {
+            margin-left: 2%;
+            float: left;
+        }
+
+        .dom .messages .add {
+
+            margin-right: 4%;
+        }
+
+        .dom .feeds {
+            text-align: center;
+            margin: 5px;
+            font-size: small;
+            overflow: hidden;
+            width: 45%;
+            display: inline-block;
+        }
+
+        .dom .feeds .create {
+            width: 100%;
+            height: 20%;
+        }
+
+        .dom .feeds .create a {
+            float: right;
+            margin-right: 15%;
+        }
+
+        .dom .nots {
+            width: 25%;
+            margin: 5px;
+            font-size: small;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .dom .nots .refresh {
+            width: 100%;
+            height: 20%;
+        }
+
+        .dom .nots .refresh a {
+            float: left;
+            margin-left: 15%;
+        }
+    </style>
+    {%block css%}
+    {%endblock%}
+
+</head>
+
+<body>
+    <section>
+        <div class="menus">
+            <ul>
+                <li id="flikr"><a>{{platform}}</a></li>
+                <li class="dropdown" style="float:right;padding-right:7px;margin-right:7px;"><a
+                        href="javascript:void(0)" class="dropbtn">logout</a>
+                    <div class="dropdown-content">
+                        <a id="flikr" href="#">flikr</a>
+                        <a id="fb" href="#">facebook</a>
+                        <a id="twitter" href="#">twitter</a>
+                        <a id="linkedin" href="#">linkedin</a>
+                        <a href="#">all account</a>
+                    </div>
+                </li>
+                <li class="dropdown" style="float:right;padding-right:7px;margin-right:7px;"><a
+                        href="javascript:void(0)" class="dropbtn">platform</a>
+                    <div class="dropdown-content">
+                        <a id="flikr" href="{{url_for('flikr')}}">flikr</a>
+                        <a id="fb" href="#">facebook</a>
+                        <a id="twitter" href="#">twitter</a>
+                        <a id="linkedin" href="#">linkedin</a>
+                        <a href="#">add account</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class="row">
+        <div class="accountinfo">
+            <div class="avatar">
+                {%block image%}
+                {%endblock%}
+            </div>
+            <div class="details">
+                {%block info%}
+                {%endblock%}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="dom">
+            <div class="messages">
+                <div class="title">
+                    <h3>messages</h3>
+
+                </div>
+                <div class="add">
+                    <h3><a onClick="composeText()" href="#">text</a></h3>
+                </div>
+                <hr>
+                <div class="content">
+                    {%block messages%}
+                    {%endblock%}
+                </div>
+
+            </div>
+            <div class="feeds">
+                <div class="create">
+                    <a onClick="composeFeed()" href="#">
+                        <h3>compose</h3>
+                    </a>
+                </div>
+                <div class="content">
+                    {%block feeds%}
+                    {%endblock%}
+                </div>
+            </div>
+            <div class="nots">
+                <div class="refresh">
+                    <a onClick="reload()" href="#">
+                        <h3>refresh</h3>
+                    </a>
+                </div>
+                <div class="content">
+                    {%block notifications%}
+                    {%endblock%}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
