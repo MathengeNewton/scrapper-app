@@ -15,7 +15,8 @@
         }
 
         hr {
-            opacity: .05;
+            border-width: 0.1ch;
+            opacity: .5;
         }
 
         /*navigation bar*/
@@ -26,7 +27,7 @@
             margin-top: 15px;
             padding: 0;
             overflow: hidden;
-            background-color: rgb(238, 103, 13);
+            background-color: #f9f9f9;
         }
 
         li {
@@ -35,7 +36,7 @@
 
         li a {
             display: block;
-            color: white;
+            color: #000000;
             text-align: center;
 
             padding: 14px 16px;
@@ -52,7 +53,7 @@
         li a,
         .dropbtn {
             display: inline-block;
-            color: white;
+            color: black;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
@@ -61,6 +62,7 @@
         li a:hover,
         .dropdown:hover .dropbtn {
             background-color: #111;
+            color: white;
         }
 
         li.dropdown {
@@ -85,7 +87,9 @@
         }
 
         .dropdown-content a:hover {
-            background-color: #f1f1f1;
+            background-color: #111;
+            color: white;
+
         }
 
         .dropdown:hover .dropdown-content {
@@ -109,7 +113,6 @@
         /*body */
         .dom {
             list-style-type: none;
-            margin-top: .5%;
             width: 100%;
             align-content: center;
             overflow: hidden;
@@ -123,6 +126,7 @@
         .dom .messages {
             width: 25%;
             margin: 5px;
+            color: #111;
             font-size: small;
             overflow: hidden;
 
@@ -192,28 +196,26 @@
     <section>
         <div class="menus">
             <ul>
-                <li id="flikr"><a>{{platform}}</a></li>
+                <li id="flikr"><a>{{user}}</a></li>
+                <li><a href="{{url_for('leaves')}}">Leaves dash</a></li>
                 <li class="dropdown" style="float:right;padding-right:7px;margin-right:7px;"><a
                         href="javascript:void(0)" class="dropbtn">logout</a>
                     <div class="dropdown-content">
-                        <a id="flikr" href="#">flikr</a>
-                        <a id="fb" href="#">facebook</a>
-                        <a id="twitter" href="#">twitter</a>
-                        <a id="linkedin" href="#">linkedin</a>
-                        <a href="#">all account</a>
+                        <a id="flikr" href="{{url_for('logout')}}">flikr</a>
+                        <a id="fb" href="{{url_for('logout')}}">github</a>
+                        <a href="{{url_for('logoutall')}}">sign out</a>
                     </div>
                 </li>
                 <li class="dropdown" style="float:right;padding-right:7px;margin-right:7px;"><a
                         href="javascript:void(0)" class="dropbtn">platform</a>
                     <div class="dropdown-content">
                         <a id="flikr" href="{{url_for('flikr')}}">flikr</a>
-                        <a id="fb" href="#">facebook</a>
-                        <a id="twitter" href="#">twitter</a>
-                        <a id="linkedin" href="#">linkedin</a>
-                        <a href="#">add account</a>
+                        <a id="fb" href="{{url_for('github')}}">github</a>
+                        <a href="{{url_for('new_platform')}}">new account</a>
                     </div>
                 </li>
             </ul>
+            <hr>
         </div>
     </section>
     <div class="row">

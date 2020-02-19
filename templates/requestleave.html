@@ -1,0 +1,96 @@
+{%extends 'baseleave.html'%}
+{%block details%}
+<form action="/add-leave" method="POST">
+    <!-- <table>
+        <tr>
+            <th>
+                DETAIL QUESTION
+            </th>
+            <th>
+                input
+            </th>
+        </tr>
+        <tr>
+            <td>
+                START DATE
+            </td>
+            <td>
+                {{form.start}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                INTENDED RETURN DATE
+            </td>
+            <td>
+                {{form.end}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                LEAVE CATEGORY
+            </td>
+            <td>
+                {{form.category}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                COLLEGUE COVER
+            </td>
+            <td>
+                {{form.col_id}}
+            </td>
+        </tr>
+    </table> -->
+
+    {{form.startdate.label}}:<br>
+    {{form.startdate}}
+
+    {{form.enddate.label}}:<br>
+    {{form.enddate}}
+
+    {{form.category.label}}:<br>
+    {{form.category}}
+
+    <input type="submit" value="submit">
+
+
+</form>
+<button onclick="goBack()">back</button>
+<script>
+    function goBack() {
+        window.history.back(-1)
+    }
+</script>
+{%endblock%}
+{%block addcss%}
+<style>
+    form {
+        height: 90%;
+        width: 90%;
+        align-content: center;
+    }
+
+
+
+    table,
+    td,
+    th {
+        border: 3px solid #ddd;
+        text-align: left;
+    }
+
+    table {
+        color: black;
+        border-collapse: collapse;
+        margin-left: 20%;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 15px;
+    }
+</style>
+{%endblock%}

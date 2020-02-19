@@ -1,0 +1,70 @@
+{%extends 'base.html'%}
+{%block title%}
+<title>register user</title>
+{%endblock%}
+
+{%block body%}
+
+<div>
+    <div class="content">
+        <form id="myForm" class="loginform" action='/register' method="POST" onSubmit="return checkPassword(this)">
+            <h1>Welcome friend</h1>
+            <h1>Sign up here:</h1>
+            {{form.hidden_tag()}}
+
+            <div class="form-style-email">
+                {{form.name.label}}
+                {{form.name}}
+            </div>
+            <br />
+
+            <div class="form-style-email">
+                {{form.email.label}}
+                {{form.email}}
+            </div>
+            <br />
+            <div class="form-control">
+                {{form.password.label}}
+                {{form.password}}
+            </div>
+            <br />
+
+            <input type="submit" class="submit-button" value="sign up" />
+            <br />
+            <!-- <input type="file" name="myFile" /> -->
+            <br />
+        </form>
+    </div>
+</div>
+{%endblock%}
+{%block extracss%}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/forms.css')}}" />
+{%endblock%}
+<!-- {%block script%}
+<script>
+    function checkPassword(form) {
+        initial = form.initial.value;
+        confirm = form.confirm.value;
+
+        // If password not entered
+        if (initial == '')
+            alert("Please enter Password");
+
+        // If confirm password not entered
+        else if (confirm == '')
+            alert("Please enter confirm password");
+
+        // If Not same return False.
+        else if (initial != confirm) {
+            alert("\nPassword did not match: Please try again...")
+            return false;
+        }
+
+        // If same return True.
+        else {
+            alert("Password Match: Welcome to GeeksforGeeks!")
+            return true;
+        }
+    }
+</script>
+{%endblock%} -->

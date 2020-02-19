@@ -1,0 +1,28 @@
+{%extends 'dashboard.html'%}
+
+{%block title%}
+<title>{{name}}</title>
+{%endblock%}
+{%block image%}
+<div class="content">
+    <form id="myForm" class="loginform" action='/' method="POST">
+        <h1>mini github here</h1>
+        <input type="file" name="myFile" />
+        <br />
+        <input type="submit" class="submit-button" value="add project" />
+        <br />
+
+    </form>
+</div>
+{%endblock%}
+
+{%block css%}
+<style>
+    .row .dom {
+        visibility: hidden;
+    }
+</style>
+{%endblock%}
+{%block extracss%}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/forms.css')}}" />
+{%endblock%}

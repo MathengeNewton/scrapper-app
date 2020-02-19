@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>{{user}}'s</title>
+    {%block addcss%}
+    {%endblock%}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css')}}" />
+
+    <style>
+        .container {
+            color: #f9f9f9f9;
+            width: 90%;
+        }
+
+        .container .content {
+            align-self: center;
+            border-radius: 5px;
+            background-color: darkgrey;
+            margin-left: 15%;
+            padding: 4%;
+        }
+    </style>
+</head>
+
+<body>
+    <!--topnav-->
+    <div class="row">
+        <div class="dash">
+            <div class="identity">
+                <h3>{{user}}</h3>
+            </div>
+            <div class="menu">
+                <h3>logout</h3>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <!--some dumb line-->
+    <div class="title">
+        <h3>Process your leaves here</h3>
+    </div>
+    <!--pannel section-->
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                {%block details%}
+                {%endblock%}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="footer">
+            <div class="copyright">
+                <p>&copy; 2020 copyright<p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

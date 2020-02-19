@@ -1,0 +1,84 @@
+{%extends 'baseleave.html'%}
+{%block details%}
+<form action="#" method="post">
+    <table>
+        <tr>
+            <th>
+                DETAIL QUESTION
+            </th>
+            <th>
+                YOUR INPUT
+            </th>
+        </tr>
+        <tr>
+            <td>
+                START DATE
+            </td>
+            <td>
+                DATE HERE
+            </td>
+        </tr>
+        <tr>
+            <td>
+                INTENDED RETURN DATE
+            </td>
+            <td>
+                DATE HERE
+            </td>
+        </tr>
+        <tr>
+            <td>
+                LEAVE CATEGORY
+            </td>
+            <td>
+                TYPE HERE
+            </td>
+        </tr>
+        <tr>
+            <td>
+                COLLEGUE COVER
+            </td>
+            <td>
+                COLLEGUE ID HERE
+            </td>
+        </tr>
+    </table>
+
+</form>
+<button class="margin-top:20px;" onclick="goBack()">back</button>
+<script>
+    function goBack() {
+        window.history.back(-1)
+    }
+</script>
+{%endblock%}
+{%block addcss%}
+<style>
+    form {
+        height: 90%;
+        width: 90%;
+        align-content: center;
+    }
+
+
+
+    table,
+    td,
+    th {
+        border: 3px solid #ddd;
+        text-align: left;
+    }
+
+    table {
+        color: black;
+        border-collapse: collapse;
+        margin-left: 20%;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 15px;
+    }
+</style>
+{%endblock%}

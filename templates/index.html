@@ -23,14 +23,37 @@
                 {{form.password}}
             </div>
             <br />
-            <input type="submit" class="submit-button" value="submit" />
+            <input id='myradio' type="radio" value="admin" name="clearance" checked>
+            admin <br>
+            <input id='myradio' type="radio" value="staff" name="clearance">
+            staff <br>
+
+            <input type="submit" class="submit-button" value="sign in" />
             <br />
             <!-- <input type="file" name="myFile" /> -->
             <br />
+            <a style=" font-size: smaller;" href="{{url_for('register')}}">New here</a>
         </form>
     </div>
-</div>
-{%endblock%}
-{%block extracss%}
+</div> {%endblock%} {%block extracss%}
 <link rel="stylesheet" href="{{ url_for('static',filename='css/forms.css')}}" />
+{%endblock%}
+{%block script%}
+<script>
+    function action() {
+        var cat = document.getElementByName('clearance');
+        for (var i = 0, length = cat.length; i < length; i++) {
+            if (cat[i].checked) {
+                cat_detail = radio[i].value
+                if (cat_detail == "admin") {
+                    document.getElementById("myform").setAttribute('action', '/login');
+                } else if (cat_detail == 'staff') {
+                    document.getElementById('myform').setAttribute('action', '/emp-login')
+                }
+
+            }
+        }
+        alert("Choose account typy by checking the textbox")
+    }
+</script>
 {%endblock%}
